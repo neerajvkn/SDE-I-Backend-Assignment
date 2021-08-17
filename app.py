@@ -15,7 +15,6 @@ def index():
             "schedule": data['schedule'][0]
         }
         data = api_call(req_body)
-        # return redirect('/')
         return data
     if request.method == 'GET':
         return render_template('index.html')

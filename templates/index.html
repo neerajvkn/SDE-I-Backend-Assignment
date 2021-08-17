@@ -53,3 +53,20 @@
         })
     });
 </script>
+
+<script type="text/javascript">
+    var radios = document.forms["primary"].elements["selection"];
+    for (var i = 0, max = radios.length; i < max; i++) {
+        radios[i].onclick = function () {
+            if (this.value == 'enable_scheduler') {
+                document.getElementById('schedule').setAttribute("required", "");
+                document.getElementById('scheduleDiv').style.display = 'block';
+            }
+            if (this.value == 'disable_scheduler') {
+                document.getElementById('schedule').removeAttribute("required");
+                document.getElementById('scheduleDiv').style.display = 'none';
+            }
+        }
+    }
+
+</script>

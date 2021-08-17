@@ -15,6 +15,7 @@ def index():
             "schedule": data['schedule'][0]
         }
         data = api_call(req_body)
+        # return redirect('/')
         return data
     if request.method == 'GET':
         return render_template('index.html')
@@ -35,7 +36,6 @@ def scheduled_instances():
     req = requests.post(api_url)
     parsed = json.loads(req.content)
     return json.dumps(parsed)
-
 
 if __name__ == "__main__":
     app.run(debug=True)

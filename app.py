@@ -8,7 +8,15 @@ app = Flask(__name__)
 
 def index():
     if request.method == 'POST':
-        pass
+        data = request.form.to_dict(flat=False)
+        req_body = {
+            "action": data['action'][0],
+            "instance_id": data['instanceID'][0],
+            "schedule": data['schedule'][0]
+        }
+        data = api_call(req_body)
+        # return redirect('/')
+        return data
     if request.method == 'GET':
         return render_template('index.html')
 

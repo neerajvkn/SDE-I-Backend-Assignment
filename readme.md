@@ -55,7 +55,12 @@ pip3 install flask
 ```
 pip3 install requests
 ```
-8. To run the app in the local machine, type
+8. Goto the lambda app EC2Schedueler and click the API Gateway on dashboard. 
+9. Under Triggers, find the API Function we create and expand details section, and copy the API Endpoint
+10. Open the app.py in root the downloaded repo and replace the url assigned to api_url variable under function api_call() with the copied endpoint url
+11. Now goto lambda app SchedulerInstances and copy its api endpoint url and replace the value assigned to api_url varible in line 35 under function scheduled_instances() with the copied endpoint url
+
+12. Now Local Machine for development setup is complete. To run the app in the local machine, type
 ```
 python app.py  
 
@@ -63,4 +68,4 @@ or
 
 python3 app.py
 ```
-9. Once the terminal says the app is running, goto any browser and enter the link shown in the terminal window to access the app
+13. Once the terminal says the app is running, goto any browser and enter the link shown in the terminal window to access the app

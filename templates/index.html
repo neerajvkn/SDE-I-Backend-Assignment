@@ -39,3 +39,17 @@
     </div>
 
 </body>
+
+<script type="text/javascript">
+    $(document).on('submit', '#primary_from', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/',
+            data: { 'instanceID': $("#instanceID").val(), 'action': radios.value, 'schedule': $("#schedule").val() },
+            success: function (data) {
+                alert(data);
+            }
+        })
+    });
+</script>

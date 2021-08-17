@@ -8,10 +8,6 @@ region = 'us-east-2'
 ec2 = boto3.client('ec2', region_name=region)
 
 def lambda_handler(event, context):
-    # return {
-    #         'statusCode' : 200,
-    #         'body' : json.dumps(event)
-    #     }
     table_name = 'EC2Scheduler-ConfigTable-1HC6CZHH5I2KM'
     client = boto3.resource('dynamodb')
     scheduler_table = client.Table(table_name)

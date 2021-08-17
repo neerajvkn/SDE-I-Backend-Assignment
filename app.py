@@ -22,7 +22,12 @@ def api_call(req_body):
     decoded_data = req.content.decode("utf-8") 
     return decoded_data
 
-
+@app.route('/scheduled_instances', methods=['POST'])
+def scheduled_instances():
+    api_url = 'https://c8il739cx9.execute-api.us-east-2.amazonaws.com/default/ScheduledInstances'
+    req = requests.post(api_url)
+    parsed = json.loads(req.content)
+    return json.dumps(parsed)
 
 
 if __name__ == "__main__":
